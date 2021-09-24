@@ -1,4 +1,4 @@
-package item
+package samplelib
 
 import (
 	"context"

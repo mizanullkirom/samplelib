@@ -13,7 +13,8 @@ func SetItem(rdb *redis.Client, key string, i *Item) error {
 	if err != nil {
 		return err
 	}
-	rdb.Set(ctx, key, string(item), 0).Err()
+	err = rdb.Set(ctx, key, string(item), 0).Err()
+	return err
 }
 
 func GetItem(rdb *redis.Client, key string) (string, error) {

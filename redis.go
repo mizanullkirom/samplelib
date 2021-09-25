@@ -19,5 +19,6 @@ func SetItem(rdb *redis.Client, key string, i *Item) error {
 
 func GetItem(rdb *redis.Client, key string) (string, error) {
 	ctx := context.Background()
-	rdb.Get(ctx, key).Result()
+	val, err := rdb.Get(ctx, key).Result()
+	return val, err
 }
